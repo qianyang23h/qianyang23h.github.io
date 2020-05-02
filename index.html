@@ -145,6 +145,87 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/02/install-mxnet-cu102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/02/install-mxnet-cu102/" class="post-title-link" itemprop="url">install mxnet-cu102</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-05-02 20:32:39 / Modified: 21:19:13" itemprop="dateCreated datePublished" datetime="2020-05-02T20:32:39+08:00">2020-05-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="安装mxnet-cu102"><a href="#安装mxnet-cu102" class="headerlink" title="安装mxnet-cu102"></a>安装mxnet-cu102</h1><h2 id="一、安装cuda（window环境）"><a href="#一、安装cuda（window环境）" class="headerlink" title="一、安装cuda（window环境）"></a>一、安装cuda（window环境）</h2><p>CUDA：是NVIDIA推出的只能用于自家GPU的并行计算框架。只有安装这个框架才能够进行复杂的并行计算。主流的深度学习框架也都是基于CUDA进行GPU并行加速的，几乎无一例外。</p>
+<p>这里有个坑就是，这里系统默认也是会安装一个cuda的，如下图：</p>
+<p><img src="/2020/05/02/install-mxnet-cu102/1.png" alt></p>
+<p>但是实际上这个驱动是没有用的，我们需要去官网重新下载安装cuda。</p>
+<p>下载官网：<a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads</a></p>
+<p>安装过程中选择<strong>自定义安装</strong></p>
+<p><img src="/2020/05/02/install-mxnet-cu102/%5C2.png" alt></p>
+<ul>
+<li>CUDA：这个勾选，CUDA包含的Visual Studio可以不用下载。</li>
+<li>NVIDIA GeForce Expeience：这个是优化游戏的，可以取消勾选。</li>
+<li>Driver components：这下面的Display Driver是显卡驱动，有显卡驱动了就不用勾选了。</li>
+<li>Other components：PhysX好像也是优化游戏的，不用勾选。</li>
+</ul>
+<h2 id="二、安装mxnet-cu102"><a href="#二、安装mxnet-cu102" class="headerlink" title="二、安装mxnet-cu102"></a>二、安装mxnet-cu102</h2><p>第一步：直接使用pip install mxnet-cu102安装，pip找不到mxnet-cu102这个库</p>
+<p>第二步：所以我们去pypi上面搜索mxnet-cu102这个库，看是否有解决方案。<a href="https://pypi.org/project/mxnet-cu102/，解决办法如下图：" target="_blank" rel="noopener">https://pypi.org/project/mxnet-cu102/，解决办法如下图：</a></p>
+<p><img src="/2020/05/02/install-mxnet-cu102/3.png" alt></p>
+<p>第三步：直接使用pip进行下载，发现太慢了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --pre mxnet-cu102 -f https:&#x2F;&#x2F;dist.mxnet.io&#x2F;python&#x2F;cu102</span><br></pre></td></tr></table></figure>
+
+<p>第四步：所以直接去上述网址<a href="https://dist.mxnet.io/python/cu102找到window的安装包[mxnet_cu102mkl-1.6.0-py2.py3-none-win_amd64.whl](https://repo.mxnet.io/dist/python/cu102mkl/mxnet_cu102mkl-1.6.0-py2.py3-none-win_amd64.whl)使用迅雷下载。" target="_blank" rel="noopener">https://dist.mxnet.io/python/cu102找到window的安装包[mxnet_cu102mkl-1.6.0-py2.py3-none-win_amd64.whl](https://repo.mxnet.io/dist/python/cu102mkl/mxnet_cu102mkl-1.6.0-py2.py3-none-win_amd64.whl)使用迅雷下载。</a></p>
+<p>最后使用命令手动安装whl文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mxnet_cu102mkl-1.6.0-py2.py3-none-win_amd64.whl</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/%E4%BD%BF%E7%94%A8hexo%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -391,7 +472,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
